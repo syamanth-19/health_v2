@@ -1,31 +1,50 @@
 <template>
-  
-  <p>Hello ! Welcome to health app </p>
-
+  <div id = 'mainapp'>
+  <h2>MedhaIR Health Tracker </h2>
+  <button>Login</button>
+  <user_login />
+  </div>
 </template>
 
 <script>
-
+import user_login from './components/user_login.vue'
 export default {
   name: 'App',
-  components: {
-    
+
+  components: {user_login
+  }, 
+
+  data () {
+    return {
+      test : 'this is test data'
+    }
+  },
+
+  methods : {
+    handlemouse() {
+      return "this is the test event !! "
+    }
   }
+
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped >
+#mainapp {
+  background-color: deepskyblue;
+  border-radius: 10px;
+  padding: 5px;
 }
-p {
+
+p, h2 {
   text-align: center;
   font-weight: bold;
+  font-family: 'Varela Round', sans-serif;
   
+}
+
+button {
+  border-radius: 2px;
+  padding: auto auto ;
 }
 </style>
