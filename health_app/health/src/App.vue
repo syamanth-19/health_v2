@@ -1,8 +1,12 @@
 <template>
   <div id = 'mainapp'>
   <h2>MedhaIR Health Tracker </h2>
-  <button>Login</button>
-  <user_login />
+  <div class="log" v-if = logged><button @click = handlemouse >Login</button></div>
+  
+  <div >
+    <user_login />
+  </div>
+  
   </div>
 </template>
 
@@ -16,13 +20,14 @@ export default {
 
   data () {
     return {
-      test : 'this is test data'
+      test : 'this is test data',
+      logged : false
     }
   },
 
   methods : {
     handlemouse() {
-      return "this is the test event !! "
+      console.log("this is the test event !! ")
     }
   }
 
@@ -46,5 +51,9 @@ p, h2 {
 button {
   border-radius: 2px;
   padding: auto auto ;
+}
+
+.log {
+  text-align: right;
 }
 </style>
